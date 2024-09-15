@@ -21,3 +21,11 @@
 
 ## vite
 ![alt text](image-5.png)
+`npm create vite@latest`
+## proj structure
+
+- inside main.jsx, strict mode which is a wrapper component to check for potential problems, like deperacated, unsafe lifecycle methods, legacy context apis, etc.
+
+## jsx crash course
+- every react comoponent returns an html like syntax called jsx
+- can only return a single element.
