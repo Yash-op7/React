@@ -29,3 +29,16 @@
 ## jsx crash course
 - every react comoponent returns an html like syntax called jsx
 - can only return a single element.
+
+##  react router
+- the App() function returns <ReactProvider router={router}/>
+where router is:
+`const router = createBrowserRouter(
+    createRoutesFromElements(<Route index element={<HomePage />} />)
+)`
+here you can provide an explicit route or you can provide index which by default means '/' route
+
+- for navbar and footers which appear on all pages yuo use `layouts`
+so make a layouts folder, inside it
+    - `MainLayout.jsx`, then use this as a parent route to the rest of our routes so they follow its layout
+    
