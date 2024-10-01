@@ -11,3 +11,6 @@
 - When `useState`'s `setState` is called, it looks at the old value and the new value and if they're the same it doesn't re-render, so when we have objects and arrays as states they are stored as references in the state so we cannot do in place mutation of the array, instead we need to create a new array using `...`
 - For the default value you can also pass a callback and that will only be run once to compute the initial state.
 
+## 2. `useReducer`
+- This gives a nice way to manage more complex state.
+- You can also test the reducer code independently
