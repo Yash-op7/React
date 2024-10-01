@@ -49,4 +49,14 @@ useState and useReducer are used to manage state and how it changes, now we will
 ## 6. `useRef`:
 - another way to associate state to a component
 - when you change the value of reference it doesn't cause a re render
-1. first use is to get the reference to a html element
+### 1. first use is to get the reference to a html element
+- we attach reference like this:
+![alt text](image-1.png)
+- next when we want to do something with the referenced html tag, we first need to make sure the tag exists and then work on it, so put useRef's ref's logic inside a useEffect since useEffect runs after the initial render
+- what is `current`, when you have a reference, a `current` property is associated with that reference, ref is just a pointer the current property gives us access to manipulate the element.
+- ![alt text](image-2.png)
+- so now anytime the page refereshes we automatically set reference to that element.
+### 2. second use is to maintain state without doing any updates
+- this is weird dont use it
+
+## 7. `context` and `useContext` and `customHooks`
