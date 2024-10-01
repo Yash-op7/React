@@ -134,9 +134,9 @@ useEffect(() => {
 # important points:
 - Batch updates: React batches multiple state updates that occur during the same event to optimize re-renders. Instead of re-rendering after every state update, React waits until the event is over, then re-renders the component once with the final state.
 - Difference between `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`?
-componentDidMount: Runs once after the component mounts. Ideal for data fetching or initializing event listeners.
 
 ```jsx
+componentDidMount: Runs once after the component mounts. Ideal for data fetching or initializing event listeners.
 useEffect(() => {
   // Runs after the component mounts
 }, []);
@@ -157,3 +157,16 @@ useEffect(() => {
   };
 }, []);
 ```
+- Does a component re-render when its props change?
+Yes, a component re-renders when any of its props change. Even if the parent component re-renders, the child will only re-render if the props passed to it are new or different from the previous render. React performs a shallow comparison of the props, so:
+
+Primitive values (e.g., strings, numbers, booleans) are compared by value.
+Objects and arrays are compared by reference. Even if the content is the same, if a new object or array is passed (i.e., the reference changes), it will trigger a re-render.
+To optimize re-rendering behavior, you can use React.memo to prevent unnecessary re-renders by memoizing the component unless its props have changed.
+
+- 11. How does useCallback help prevent unnecessary re-renders in child components?
+useCallback prevents unnecessary re-renders by memoizing a callback function. This is especially useful when passing a callback as a prop to child components. Without useCallback, the child component would re-render every time the parent renders, as the function reference changes.
+
+
+# Resources:
+## 1. High quallity Interview questions: https://chatgpt.com/c/66e7816c-1850-8011-bbbd-07ecb6ce9a6d
