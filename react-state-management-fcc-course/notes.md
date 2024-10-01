@@ -38,3 +38,15 @@ useState and useReducer are used to manage state and how it changes, now we will
 ![alt text](image.png)
 
 - use useEffect only when needed, 
+
+- another thing is how to implement a stopwatch, see the example
+
+- also the callback passed to useEffect can return an optional value which is a callback function which is the cleanup function which gets called when the component unmounts to clear things like timers.
+
+- useEffect is important in custom hooks, 
+- runs after the initial render
+
+## 6. `useRef`:
+- another way to associate state to a component
+- when you change the value of reference it doesn't cause a re render
+1. first use is to get the reference to a html element

@@ -1,22 +1,12 @@
-// useEffect example
-/*
-lets use it to fetch data, whiich is its most common use case
-*/
-
-import { useEffect, useState } from "react";
-
-function Stopwatch() {
-  const [time, setTime] = useState(0);
-
-  return (<div>
-    Time: {time}
-  </div>)
-}
+import { useRef } from "react";
 
 function App() {
+  const inputRef = useRef(null);
+  
   return (
     <div className="outer-div">
-<Stopwatch />
+      <input type='text' ref={inputRef}>
+      </input>
     </div>
   );
 }
