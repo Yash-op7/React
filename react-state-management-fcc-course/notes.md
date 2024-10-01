@@ -33,3 +33,8 @@ useState and useReducer are used to manage state and how it changes, now we will
 - the other time to use this is when you are creating a callback in a custom hook, because you have no clue of what the custom hook will do with the callback and you'd want the callback reference to be stable.
 
 ## 5. `useEffect`
+- it takes a function that is going to be called once when the dom is rendered or whenever react detects a change in the dep array.
+- example of a solid useEffect, good pattern:
+![alt text](image.png)
+
+- use useEffect only when needed, 
