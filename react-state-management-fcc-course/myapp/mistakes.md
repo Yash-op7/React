@@ -1,0 +1,1 @@
+1. I always forget to return inside JSX, especially in .map() methods.

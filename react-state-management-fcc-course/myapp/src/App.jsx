@@ -1,54 +1,51 @@
-import { useState } from "react";
+import { useReducer } from "react";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-  const increment = (prev) => prev+1;
-  return (
-    <div className="component">
-      <p>{count}</p>
-      <button onClick={() => setCount(increment)}>+</button>
-    </div>
-  );
+/*
+const [state, dispatch] = useReducer(reducerFunction, initalState);
+
+// reducer function returns the new state
+const reducerFunction = (prevState, action) {
+  // action is an object with 2 properties type and payload
 }
+*/
 
-function Names() {
-  const [names, setNames] = useState(() => ['tom', 'jane']);
-  const [name, setName] = useState('Enter name');
+function NameList() {
 
-  function addName() {
-    setNames([...names, name]);
-    setName('');
+  const [namesList, dispatch] = useReducer(reducerFunc, {
+    names: ['bob'],
+    name:''
+  })
+
+  function reducerFunc(prevState, action) {
+    switch (action.type) {
+      case 'ADD_NAME':
+          return {
+          names: [...prevState.names, prevState.name],
+          name:''
+        }
+        break;
+      default:
+        console.log('Action not defined.');
+        return prevState;
+        break;
+    }
   }
 
   return <div className="component">
     <ol>
-      {names.map((name, idx) => {
+      {namesList.names.map((name, idx) => {
         return <li key={idx}>
           {name}
         </li>
       })}
     </ol>
-    <input
-      type="text"
-      value={name}
-      onChange={(event) => setName(event.target.value)}
-    />
-    <button
-      onClick={() => addName()}
-    >
-      Add Name
-    </button>
-    <p>
-      {name}
-    </p>
   </div>
 }
 
 function App() {
   return (
     <div className="outer-div">
-      <Counter />
-      <Names />
+      <NameList />
     </div>
   );
 }
