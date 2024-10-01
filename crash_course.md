@@ -3,24 +3,24 @@
 - react allows us to build dynamic interactive websites
 
 # how react works:
-- react uses virtual dom, which is a lightweight copy of the actual dom, when a state in a component changes, the virtual dom changes first, then react compares this with the actual dom then it updates only the parts that need to be updated.![alt text](image.png)
+- react uses virtual dom, which is a lightweight copy of the actual dom, when a state in a component changes, the virtual dom changes first, then react compares this with the actual dom then it updates only the parts that need to be updated.![alt text](notes_screenshots/image.png)
 
 ## components:
-![alt text](image-1.png)
+![alt text](notes_screenshots/image-1.png)
 ## state
-![alt text](image-2.png)
+![alt text](notes_screenshots/image-2.png)
 - to define a state in a functionall component you can use a hook.
 
 - see redux for global state and state management
 
 ## hooks
-![alt text](image-3.png)
+![alt text](notes_screenshots/image-3.png)
 
 ## different types of websites
-![alt text](image-4.png)
+![alt text](notes_screenshots/image-4.png)
 
 ## vite
-![alt text](image-5.png)
+![alt text](notes_screenshots/image-5.png)
 `npm create vite@latest`
 ## proj structure
 
@@ -58,13 +58,13 @@ return navigate('/');
 
 
 # POST request:
-![alt text](image-6.png)
+![alt text](notes_screenshots/image-6.png)
 
 # Delete Request:
-![alt text](image-7.png)
+![alt text](notes_screenshots/image-7.png)
 
 # Update/PUT Request
-![alt text](image-8.png)
+![alt text](notes_screenshots/image-8.png)
 
 # React hooks
 - only call them at the top level of a functional component, they dont work inside nested js functions, loops or anything like that.
@@ -72,23 +72,23 @@ return navigate('/');
 
 - Persistent Mutable Object: useRef indeed allows you to create a mutable object that persists across re-renders. This object has a `.current` property which can hold any value you want. Unlike state, changing the value of `.current` does not trigger a re-render of the component.
 - it allows you to create a immutable object (mutable value) that will keep its reference (mem address) between re-renders, also when its used for data objects (instead of html tags) then it provides a mutable value that does not re-render UI when the value changes, but a more common use case of useRef is to grab native html elements from the dom/jsx
-![alt text](image-17.png)
-![alt text](image-9.png)
+![alt text](notes_screenshots/image-17.png)
+![alt text](notes_screenshots/image-9.png)
 > when you want to grab elements from the dom
 
 ## `useReducer()`
 `const [state, dispatch] = useReducer(reducer, initialState);`
 - what it does is similar to setState, it goes about it in a different way using the redux pattern, which works like this:
-![alt text](image-10.png)
+![alt text](notes_screenshots/image-10.png)
 > instead of updating the state directly, you dispatch actions that go to a reducer function which determines how to compute the next state
 - just like useState, useReducer() returns an array of two values, the first value is the reactive state that you want to show in the ui, the second value is a function that can dispatch an action, an action is just an object that has a `type` key which will have a string value and an optional data payload, you might dispatch an action when a button is clicked, which will trigger your reducer function, the reducer function is something that you define and pass to the useReducer hook, the reducer function takes the current state and the action as the arguements and uses them to compute the next state, which is usually handled inside a switch statement, also the useReducer() hook can also take an initial state as the second arguement
 example:
-![alt text](image-11.png)
-![alt text](image-12.png)
+![alt text](notes_screenshots/image-11.png)
+![alt text](notes_screenshots/image-12.png)
 
 ## `useMemo()`-Memoizes expensive calculations to avoid re-computation.
 
-![alt text](image-18.png)
+![alt text](notes_screenshots/image-18.png)
 
 
 ## `useCallback()` - Memoizes callback functions to avoid unnecessary re-creations.
@@ -101,9 +101,9 @@ example:
 ## `useContext()`
 - allows you to work with react's context api, whcih itself is a way to share or scope values throughout the entire component tree.
 - lets say we an object called moods, to share the current mood across multiple disconnected components, we can create a context, one part of the application might be happy (one of the values in moods), so we'll use a context provider to scope a happy mood there now any child component inside that can inherit that value wihtout having to pass any props to the children.
-![alt text](image-14.png)
-![alt text](image-15.png)
-![alt text](image-16.png)
+![alt text](notes_screenshots/image-14.png)
+![alt text](notes_screenshots/image-15.png)
+![alt text](notes_screenshots/image-16.png)
 
 ## `useState()`
 - purpose is to handle any reactive data using states, when the state changes the UI is re-rendered. so the latest changes are shown
@@ -128,7 +128,7 @@ useEffect(() => {
     - empty dependency list: only run once when the component is mounted
     - some states/props/
 - last point is that you can add teardown code when the component is unmounted, like so:
-![alt text](image-13.png)
+![alt text](notes_screenshots/image-13.png)
 
 
 # important points:
