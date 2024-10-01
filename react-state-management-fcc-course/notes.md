@@ -35,7 +35,7 @@ useState and useReducer are used to manage state and how it changes, now we will
 ## 5. `useEffect`
 - it takes a function that is going to be called once when the dom is rendered or whenever react detects a change in the dep array.
 - example of a solid useEffect, good pattern:
-![alt text](image.png)
+![alt text](notes_snapshots/image.png)
 
 - use useEffect only when needed, 
 
@@ -51,10 +51,10 @@ useState and useReducer are used to manage state and how it changes, now we will
 - when you change the value of reference it doesn't cause a re render
 ### 1. first use is to get the reference to a html element
 - we attach reference like this:
-![alt text](image-1.png)
+![alt text](notes_snapshots/image-1.png)
 - next when we want to do something with the referenced html tag, we first need to make sure the tag exists and then work on it, so put useRef's ref's logic inside a useEffect since useEffect runs after the initial render
 - what is `current`, when you have a reference, a `current` property is associated with that reference, ref is just a pointer the current property gives us access to manipulate the element.
-- ![alt text](image-2.png)
+- ![alt text](notes_snapshots/image-2.png)
 - so now anytime the page refereshes we automatically set reference to that element.
 ### 2. second use is to maintain state without doing any updates
 - this is weird dont use it
