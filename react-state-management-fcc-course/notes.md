@@ -59,4 +59,30 @@ useState and useReducer are used to manage state and how it changes, now we will
 ### 2. second use is to maintain state without doing any updates
 - this is weird dont use it
 
+### WDS
+- for example to store how many times a component rerenders:
+```jsx
+import {useEffect, useRef, useState} from 'react';
+
+function App() {
+  const renderCount = useRef(0);
+  const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    renderCount.current = renderCount.current + 1;
+    console.log('rerender')
+  });
+
+  return <div>
+    <button onClick={() => setToggle((t) => !t)}>re render</button>
+    <h1>i rendered {renderCount.current} times</h1>
+
+  </div>
+}
+
+export default App;
+```
+- this is used to keep a state that doesn't trigger re render on change
+- another use is grab html elements from the dom, each of them have a `ref` property which allows this ref={inputRef}
+
 ## 7. `context` and `useContext` and `customHooks`
