@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      html, body{
+        height: 100%;
+      }
+      #main-page-container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      #content{
+        flex-grow: 1;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        padding: 10px;
+        display: block;
+      }
+      #box1 {
+        background-color: red;
+      }
+      #box2 {
+        background-color: skyblue;
+      }
+      #box3 {
+        background-color: seagreen;
+        border-radius: 50%;
+      }
+      #navbar {
+        border: 1px orange solid;
+        background-color: black;
+        color: white;
+      }
+      #navbar div {
+        display: inline-block;
+        margin: 10px;
+        margin-right: 50px;
+        margin-left: 40px;
+      }
+      #search-btn {
+        background-color: orange;
+        color: white;
+      }
+      #navbar a {
+        color: orange;
+      }
+      #footer{
+        border: 1px solid orange;
+        height: 30px;
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main-page-container">
+      <div id="navbar">
+        <div><a>amazon.in </a></div>
+        <div>Account</div>
+        <div>My Cart</div>
+        <div>Contact</div>
+        <div>
+          <form>
+            <input type="text" placeholder="search amazon.in" />
+            <button id="search-btn">Search</button>
+          </form>
+        </div>
+      </div>
+      <div id="content">
+        <div class="box" id="box1">box 1</div>
+        <div class="box" id="box2">box 2</div>
+        <div class="box" id="box3">box 3</div>
+      </div>
+      <div id="footer">
+<p>copyright...</p>
+      </div>
+    </div>
+  </body>
+</html>
